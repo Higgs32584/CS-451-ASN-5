@@ -1,7 +1,7 @@
 "THIS CODE IS DONE BY:Michael Higgins"
-"PURPOSE:"
-"INPUT:"
-"OUTPUT:"
+"PURPOSE: Object Class "
+"INPUT: none"
+"OUTPUT: none"
 Object subclass: #Node
         instanceVariableNames: 'num left right '
         classVariableNames:' '
@@ -29,7 +29,7 @@ Object subclass: #Node
                     ifNotNil:[right compareNum:numba]]
     !
     "PURPOSE: traversing tree in inOrder"
-    "INPUT: no Input"
+    "INPUT: no input,called on node"
     "OUTPUT: number"
     print_inOrder
     left ifNotNil:[left print_inOrder].
@@ -37,7 +37,7 @@ Object subclass: #Node
     right ifNotNil:[right print_inOrder].
     !
     "PURPOSE: traversing tree in preOrder"
-    "INPUT: no Input"
+    "INPUT: no input,called on node"
     "OUTPUT: number"
     print_preOrder
     num printNl.
@@ -45,7 +45,7 @@ Object subclass: #Node
     right ifNotNil:[right print_preOrder].
     !
     "PURPOSE: traversing tree in postOrder"
-    "INPUT: no Input"
+    "INPUT: no input,called on nod"
     "OUTPUT: number"
     print_postOrder
     left ifNotNil:[left print_postOrder].
@@ -104,13 +104,15 @@ Object subclass: #BinaryTree
 |t1 |
     t1 := BinaryTree new.
     t1 initialize: 1.
-    1 to: 10000 do: [:x | t1 insert: x. ]
+    1 to: 20 do: [:x | t1 insert: x. ]
     
     
     'Test 2' printNl.
     'Preorder' printNl.
     t1 preOrder printNl.
     'InOrder' printNl.
-    "t1 inOrder."
+    t1 inOrder.
     'PostOrder' printNl.
-    "t1 postOrder."
+    t1 postOrder.
+    
+    
